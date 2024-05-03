@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 // Modulos
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+
 
 
 // Componentes
@@ -21,7 +23,11 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    SignInComponent,
+    DashboardComponent,
+    NavbarComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +35,11 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot({
+      timeOut: 4000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }),
    // ToastrModule added
   ],
   providers: [
