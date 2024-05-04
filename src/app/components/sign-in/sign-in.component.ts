@@ -5,7 +5,6 @@ import { ToastrService } from 'ngx-toastr';
 import { User } from '../../interfaces/user';
 import { UserService } from '../../services/user.service';
 import { ErrorService } from '../../services/error.service';
-//import { ErrorService } from 'src/app/services/error.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -59,8 +58,7 @@ export class SignInComponent implements OnInit {
         this.loading = false;
         this._errorService.msjError(e);
         console.log(e.error.msg);
-       // this.loading = false;
-        //this._errorService.msjError(e);
+       
       }
     })
 
