@@ -35,7 +35,8 @@ export class LoginComponent implements OnInit{
     //creamos el body
     const user: User = {
       username: this.username,
-      password: this.password
+      password: this.password,
+      email: ''
     }
 
     this.loading = true;
@@ -45,7 +46,7 @@ export class LoginComponent implements OnInit{
         this.router.navigate(['/dashboard'])
       },
       error: (e: HttpErrorResponse) =>{
-        this._errorService.msjError(e);
+        this._errorService.msjError(e)
         this.loading = false;
       }
     })

@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-//import { Product } from 'src/app/interfaces/product';
-//import { ProductService } from 'src/app/services/product.service';
+import { NewsService } from '../../services/news.services';
+import { environment } from '../../../enviroments/enviroment';
+import { Article, NewsResponse } from '../../interfaces';
+
+
+const apikey =environment.apikey;
 
 @Component({
   selector: 'app-dashboard',
@@ -8,18 +12,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  //listProduct: Product[] = []
+  
+  public articles: Article[] = [];
 
-  //constructor(private _productService: ProductService) { }
+  constructor(private newService: NewsService){}
+  
 
   ngOnInit(): void {
+
+    this.newService.getTopHeadlines()
+    .subscribe( articles => this.articles.push(...articles) );
     this.getProducts();
   }
 
   getProducts() {
-   // this._productService.getProducts().subscribe(data => {
-      //this.listProduct = data;
-   // })
+  
   }
+  
 
 }

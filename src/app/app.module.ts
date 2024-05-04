@@ -18,7 +18,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
-
+//import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -35,10 +35,12 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule, // required animations module
+    HttpClientModule,
     ToastrModule.forRoot({
       timeOut: 4000,
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
+      
     }),
    // ToastrModule added
   ],
